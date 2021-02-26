@@ -1,0 +1,15 @@
+---
+- name: Create a new regular user with sudo privileges
+  user:
+    name: "{{ username }}"
+    state: present
+    groups: sudo
+    append: true
+    create_home: true
+    shell: /bin/bash
+
+- name: Set authorized key for remote user
+  authorized_key:
+    user: "{{ username }}"
+    state: present
+    key: "{{ ssh_key }}"

@@ -1,0 +1,10 @@
+---
+# User
+create_user: True
+username: server
+
+# Ssh
+ssh_key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/id_ecdsa.pub') }}"
+permit_root_login: "no"
+max_auth_tries: 5
+password_authentication: "no"

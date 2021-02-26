@@ -1,0 +1,32 @@
+galaxy_info:
+  role_name: intial_server_setup
+  author: Russia9
+  description: Initial server setup
+  license: GPL-3.0-only
+  min_ansible_version: 2.1
+
+  platforms:
+    - name: EL
+      versions:
+        - 7
+        - 8
+    - name: Fedora
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - stretch
+        - buster
+    - name: Ubuntu
+      versions:
+        - xenial
+        - bionic
+        - focal
+
+  galaxy_tags:
+    - server
+    - initialization
+    - system
+    - firewall
+
+dependencies: []

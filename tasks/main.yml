@@ -1,0 +1,16 @@
+---
+- name: Include OS-specific variables
+  include_vars: "{{ ansible_os_family }}.yml"
+
+- include_tasks: install-Debian.yml
+  when: ansible_os_family == 'Debian'
+
+- include_tasks: install-RedHat.yml
+  when: ansible_os_family == 'RedHat'
+
+- import_tasks: ssh.yml
+
+- import_tasks: sudo.yml
+
+- include_tasks: user.yml
+  when: create_user == True

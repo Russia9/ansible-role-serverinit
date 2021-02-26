@@ -1,0 +1,31 @@
+---
+- name: Copy ssh configuration
+  copy:
+    src: files/sshd_config.txt
+    dest: /etc/ssh/sshd_config
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Set PermitRootLogin entry
+  replace:
+    path: /etc/ssh/sshd_config
+    regexp: 'permit_root_login'
+    replace: "{{ permit_root_login }}"
+
+- name: Set MaxAuthTries entry
+  replace:
+    path: /etc/ssh/sshd_config
+    regexp: 'max_auth_tries'
+    replace: "{{ max_auth_tries }}"
+
+- name: Set PasswordAuthentication entry
+  replace:
+    path: /etc/ssh/sshd_config
+    regexp: 'password_authentication'
+    replace: "{{ password_authentication }}"
+
+- name: Restart sshd
+  service:
+    name: sshd
+    state: restarted
