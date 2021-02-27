@@ -1,0 +1,6 @@
+---
+- name: Allow OpenSSH in firewalld
+  ansible.posix.firewalld:
+    port: {{ ssh_port }}/tcp
+    permanent: yes
+    state: enabled

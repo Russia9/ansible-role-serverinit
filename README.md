@@ -16,9 +16,11 @@ Available variables:
    **Note:** If this variable set to `False`, set `permit_root_login` to `yes`
  - `username` - Username of custom user (Default: `server`)
  - `ssh_key` - Path to ssh public key (Default: `$HOME/.ssh/id_ecdsa`)
+ - `ssh_port` - Port in `sshd_config` (Default: `22`)
  - `permit_root_login` - PermitRootLogin in `sshd_config` (Default: `no`)
  - `max_auth_tries` - MaxAuthTries in `sshd_config` (Default: `5`)
  - `password_authentication`: PasswordAuthentication in `sshd_config` (Default: `no`)
+ - `setup_firewall` Setup firewall or not (Default: `True`)
 
 Dependencies
 ------------

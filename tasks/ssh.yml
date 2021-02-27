@@ -25,6 +25,12 @@
     regexp: 'password_authentication'
     replace: "{{ password_authentication }}"
 
+- name: Set Port entry
+  replace:
+    path: /etc/ssh/sshd_config
+    regexp: 'ssh_port'
+    replace: "{{ ssh_port }}"
+
 - name: Restart sshd
   service:
     name: sshd

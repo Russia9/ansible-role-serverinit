@@ -31,4 +31,4 @@ galaxy_info:
     - system
     - firewall
 
-dependencies: []
+dependencies: [ ansible.posix ]

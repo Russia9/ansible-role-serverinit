@@ -14,3 +14,9 @@
 
 - include_tasks: user.yml
   when: create_user == True
+
+- include_tasks: firewall-Debian.yml
+  when: ( ansible_os_family == 'Debian' ) and ( setup_firewall == True )
+
+  - include_tasks: firewall-RedHat.yml
+  when: ( ansible_os_family == 'RedHat' ) and ( setup_firewall == True )

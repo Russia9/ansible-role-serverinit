@@ -5,6 +5,10 @@ username: server
 
 # Ssh
 ssh_key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/id_ecdsa.pub') }}"
+ssh_port: '22'
 permit_root_login: "no"
 max_auth_tries: '5'
 password_authentication: "no"
+
+# Firewall
+setup_firewall: True
