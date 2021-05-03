@@ -1,5 +1,5 @@
 galaxy_info:
-  role_name: intial_server_setup
+  role_name: initial_server_setup
   author: Russia9
   description: Initial server setup
   license: GPL-3.0-only
